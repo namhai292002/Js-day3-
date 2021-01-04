@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container"> 
+        <h2>nguyễn nam hải</h2>
+        <form name="form">
+            <input class="show" name = 'show'>
+        </form>  
+        <table class="table" >
+            <tr>
+                <td colspan="2"><input  type="button" value="AC" onclick="delAll()"></td>
+                <td><input type="button" value="Del" onclick="del()"></td>
+                <td><input  type="button" value="/" onclick="change('/')"></td>
+            </tr>
+            <tr>
+                <td><input  type="button" value="1" onclick="change('1')"></td>
+                <td><input  type="button" value="2"onclick="change('2')"></td>
+                <td><input  type="button" value="3"onclick="change('3')"></td>
+                <td><input  type="button" value="*"onclick="change('*')"></td>
+            </tr>
+                <td><input  type="button" value="4"onclick="change('4')"></td>
+                <td><input  type="button" value="5"onclick="change('5')"></td>
+                <td><input  type="button" value="6"onclick="change('6')"></td>
+                <td><input  type="button" value="+"onclick="change('+')"></td>
+            </tr>
+            <tr>
+                <td><input  type="button" value="7"onclick="change('7')"></td>
+                <td><input  type="button" value="8"onclick="change('8')"></td>
+                <td><input  type="button" value="9"onclick="change('9')"></td>
+                <td><input  type="button" value="-"onclick="change('-')"></td>
+            </tr>
+            <tr>
+                <td><input  type="button" value="."onclick="change('.')"></td>
+                <td><input  type="button" value="0"onclick="change('0')"></td>
+                <td colspan="2"><input id="btn18" type="button" value="=" onclick="result('')"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function change(num){
+            document.form.show.value = document.form.show.value + num;    
+        }
+        function result() {
+            var exp =  document.form.show.value;
+            if(exp){
+                document.form.show.value = eval(exp)
+            }
+        }
+        function delAll() {
+            document.form.show.value = '';
+        }
+        function del() {
+            var exp =  document.form.show.value;
+            document.form.show.value = exp.substring(0, exp.length - 1);            
+        }
+    </script>
+</body>
+</html>
